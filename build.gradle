@@ -1,0 +1,23 @@
+plugins {
+    id 'idea'
+    id 'scala'
+}
+
+project.ext {
+    junitVersion = '4.12'
+    scalaVersion = '2.12.2'
+    scalatestVersion = '3.0.4'
+    tinylogVersion = '1.2'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile group: 'org.scala-lang', name: 'scala-library', version: project.scalaVersion
+    compile group: 'org.tinylog', name: 'tinylog', version: project.tinylogVersion
+
+    testCompile group: 'junit', name: 'junit', version: project.junitVersion
+    testCompile group: 'org.scalatest', name: 'scalatest_2.12', version: project.scalatestVersion
+}
